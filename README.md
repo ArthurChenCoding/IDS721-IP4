@@ -1,29 +1,15 @@
 [![CI](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml)
 [![Codespaces Prebuilds](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds)
 
-## Template for AWS Projects
+## Project requirement: Serverless Data Engineering Pipeline
 
-1. First thing to do on launch is to open a new shell and verify virtualenv is sourced.
+1. Reproduce the architecture of the example serverless data engineering project or perform something similar using only serverless technologies
 
-Things included are:
+2. Enhance the project by extending the functionality of the NLP analysis: adding entity extraction, key phrase extraction, or some other NLP feature or doing Applied Computer Vision.
 
-* `Makefile`
+## Week 9: Run a Serverless "Hello, World!" with AWS Lambda
 
-* `Pytest`
-
-* `pandas`
-
-* `Pylint`
-
-* `Dockerfile`
-
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* Most common Python libraries for ML/DL and Hugging Face
-
-* `githubactions` 
+Created a Hello World Lambda function using the AWS Lambda console. and manually invoke the Lambda function using sample event data and review output metrics.
 
 ### Used in Following Projects
 
