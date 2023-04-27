@@ -1,11 +1,11 @@
 [![CI](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml)
 [![Codespaces Prebuilds](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds)
 
-## Project requirement: Serverless Data Engineering Pipeline
+## Serverless Data Engineering Pipeline using Hugging Face Transformers library for sentiment analysis
 
-1. Reproduce the architecture of the example serverless data engineering project or perform something similar using only serverless technologies
+1. Reproduced the architecture of the example serverless data engineering project or perform something similar using only serverless technologies
 
-2. Enhance the project by extending the functionality of the NLP analysis: adding entity extraction, key phrase extraction, or some other NLP feature or doing Applied Computer Vision.
+2. Enhanced the project by extending the functionality of the NLP analysis using the Hugging Face Transformers library for sentiment analysis
 
 ## Week 9: Run a Serverless "Hello, World!" with AWS Lambda
 
