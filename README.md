@@ -11,7 +11,9 @@
 
 Created a Hello World Lambda function using the AWS Lambda console. and manually invoke the Lambda function using sample event data and review output metrics.
 
-## Week 10: Setting up AWS Glue: Create a Glue crawler to infer the schema of input data and store it in the Glue Data Catalog. Create a Glue job to perform ETL operations.
+## Week 10: Setting up AWS Glue
+
+Create a Glue crawler to infer the schema of input data and store it in the Glue Data Catalog. Create a Glue job to perform ETL operations.
 
 ### Used in Following Projects
 
