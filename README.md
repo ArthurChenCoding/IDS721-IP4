@@ -1,36 +1,105 @@
 [![CI](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/cicd.yml)
 [![Codespaces Prebuilds](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg?branch=main)](https://github.com/nogibjj/aws-template/actions/workflows/codespaces/create_codespaces_prebuilds)
 
-## Serverless Data Engineering Pipeline using Hugging Face Transformers library for sentiment analysis
+# Serverless Data Engineering Pipeline via AWS and Hugging Face Transformers library for sentiment analysis
 
-This project reproduced the architecture of the example serverless data engineering project using AWS Lambda for processing, AWS S3 for storage, and AWS Glue for ETL operations. This pipeline will extend the functionality of NLP analysis by allowing us to process and analyze large amounts of text data in a scalable and cost-effective manner.
+This project demonstrates a serverless data engineering pipeline that processes and analyzes text data using AWS services and the Hugging Face Transformers library. The pipeline is designed to be scalable, cost-effective, and easy to maintain.
 
-## Week 9: Run a Serverless "Hello, World!" with AWS Lambda
+## Architecture
 
-Created a Hello World Lambda function using the AWS Lambda console. and manually invoke the Lambda function using sample event data and review output metrics.
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│  Input S3   │────▶│   Lambda    │────▶│  Output S3  │
+│   Bucket    │     │  Function   │     │   Bucket    │
+└─────────────┘     └──────┬──────┘     └─────────────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │    Glue     │
+                    │  (ETL/ETL)  │
+                    └──────┬──────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ CloudWatch  │
+                    │  (Monitor)  │
+                    └─────────────┘
+```
 
-## Week 10: Setting up AWS Glue
+## Key Components
 
-Create a Glue crawler to infer the schema of input data and store it in the Glue Data Catalog. Create a Glue job to perform ETL operations.
+### 1. AWS Lambda
 
-## Week 11: schedule and monitor the pipeline
+- Serverless function for text processing
+- Integrates with Hugging Face for sentiment analysis
+- Triggered by new data uploads
 
-Using AWS CloudWatch Events to schedule pipeline to run at specific intervals, or trigger it based on specific events (e.g., when new data is uploaded to the input S3 bucket).
+### 2. AWS S3
 
-Monitoring the pipeline using AWS CloudWatch to ensure it's running smoothly and efficiently.
+- Input bucket for raw text data
+- Output bucket for processed results
+- Secure and scalable storage
 
-### Used in Following Projects
+### 3. AWS Glue
 
-* [coursera-mlops-aws-c3-step-functions](https://github.com/nogibjj/coursera-mlops-aws-c3-step-functions)
-* [coursera-mlops-aws-c3-eda](https://github.com/nogibjj/coursera-mlops-aws-c3-eda)
-* [coursera-mlops-aws-c3-linear-regression](https://github.com/nogibjj/coursera-mlops-aws-c3-linear-regression)
-* [coursera-mlops-aws-c3-fine-tune-sagemaker-studio-lab](https://github.com/nogibjj/coursera-mlops-aws-c30fine-tune-sagemaker-studio-lab)
+- ETL operations
+- Schema inference
+- Data catalog management
 
-### References
+### 4. AWS CloudWatch
 
-* [Watch GitHub Universe Talk:  Teaching MLOps at scale with Github](https://watch.githubuniverse.com/on-demand/ec17cbb3-0a89-4764-90a5-9debb58515f8)
-* [Building Cloud Computing Solutions at Scale Specialization](https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale)
-* [Python, Bash and SQL Essentials for Data Engineering Specialization](https://www.coursera.org/learn/web-app-command-line-tools-for-data-engineering-duke)
-* [Implementing MLOps in the Enterprise](https://learning.oreilly.com/library/view/implementing-mlops-in/9781098136574/)
-* [Practical MLOps: Operationalizing Machine Learning Models](https://www.amazon.com/Practical-MLOps-Operationalizing-Machine-Learning/dp/1098103017)
-* [Coursera-Dockerfile](https://gist.github.com/noahgift/82a34d56f0a8f347865baaa685d5e98d)
+- Pipeline monitoring
+- Scheduled executions
+- Performance metrics
+
+## Getting Started
+
+1. **Prerequisites**
+
+   - AWS Account
+   - Python 3.8+
+   - AWS CLI configured
+
+2. **Installation**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configuration**
+
+   - Set up AWS credentials
+   - Configure S3 buckets
+   - Deploy Lambda function
+
+4. **Running the Pipeline**
+   ```bash
+   python main.py
+   ```
+
+## Project Structure
+
+```
+.
+├── lambda_function.py    # AWS Lambda handler
+├── main.py              # Main pipeline script
+├── requirements.txt     # Python dependencies
+├── tf-requirements.txt  # Terraform dependencies
+└── utils/              # Utility functions
+```
+
+## Related Projects
+
+- [MLOps AWS Step Functions](https://github.com/nogibjj/coursera-mlops-aws-c3-step-functions)
+- [MLOps AWS EDA](https://github.com/nogibjj/coursera-mlops-aws-c3-eda)
+- [MLOps AWS Linear Regression](https://github.com/nogibjj/coursera-mlops-aws-c3-linear-regression)
+
+## Resources
+
+- [Building Cloud Computing Solutions at Scale](https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale)
+- [Python, Bash and SQL for Data Engineering](https://www.coursera.org/learn/web-app-command-line-tools-for-data-engineering-duke)
+- [Practical MLOps](https://www.amazon.com/Practical-MLOps-Operationalizing-Machine-Learning/dp/1098103017)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
